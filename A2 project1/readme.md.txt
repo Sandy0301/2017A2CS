@@ -17,3 +17,5 @@ calculate the sum
 ask the players whether to continue or not
 display the current score on the screen
 congratulate to the winner
+####group member
+https://github.com/Hannaaaaaaa/2017A2CS
