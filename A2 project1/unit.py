@@ -42,7 +42,7 @@ def massconversion():
     screen.config(text='%.3flb = %.3fkg'%(a,a*0.454))
 
 def mass():
-    scren.config(text='Convert from lb to kg')
+    screen.config(text='Convert from lb to kg')
     Cal = tk.Button(top, text = "Calculate", command = massconversion)
     Cal.pack()
 
