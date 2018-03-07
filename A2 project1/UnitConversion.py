@@ -1,4 +1,5 @@
-#This is winter break project
+#Hanna and Sandy's winter holiday homework
+
 import tkinter as tk
 
 def volumeconversion():
