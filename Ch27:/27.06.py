@@ -1,4 +1,4 @@
-#27.04 Sandy
+#27.06 Sandy
 import datetime
 class LibraryItem:
     def __init__(self, t, a, i):
@@ -11,30 +11,31 @@ class LibraryItem:
         return(self.__Title)
 
     def Borrowing(self):
-        self.__OnLoan = True
-        self.__DueDate = self.__DueDate + datetime.timedelta(weeks=3)
-
-    def Returning(self):
         self.__OnLoan = False
-    
+
     def PrintDetails(self):
         print(self.__Title, ' ; ', self.__Author_Artist, end='')
         print(self.__ItemID, ' ; ', self.__OnLoan,';',self.__DueDate)
-
+    
 class Book(LibraryItem):
-    def __init__(self, t, a, i):
+    def __init__(self,t,a,i):
         LibraryItem.__init__(self, t, a, i)
         self.__IsRequested = False
-        self.__RequestedBy=0
+        self.__RequestedBy = 0
     def GetIsRequested(self):
         return(self.__IsRequested)
-    def SetIsRequested(self):
+    def SetIsRequested(self, b):
         self.__IsRequested = True
+        self.__RequestedBy = b
 
     def PrintDetails(self):
-        print("book details")
+        print('')
+        print("Book Details")
         LibraryItem.PrintDetails(self)
-        print(self.__IsRequested)
+        if self.__IsRequested :
+            print('Requested by  No.', self.__RequestedBy)
+        else :
+           print('no requests')
 
 class CD(LibraryItem):
     def __init__(self, t, a, i):
@@ -45,22 +46,27 @@ class CD(LibraryItem):
     def SetGenre(self, g):
         self.__Genre = g
     def PrintDetails(self):
+        print('')
         print("CD details")
         LibraryItem.PrintDetails(self)
         print(self.__Genre)
 
 def main():
-    ThisBook = Book("12 Rules for Life", "Jordan Peterson", 7918)
-    ThisCD = CD("And Jutice For All", "Metallica", 2901)
-    ThisBook.PrintDetails()
-    ThisCD.PrintDetails()
+    ThisBook1=Book('12 Rules for Life', "Jordan Peterson", 7918)
+    ThisBook1.SetIsRequested(101)
+    ThisBook1.PrintDetails()
     ThisBook2 = Book("White Fang", "Jack London", 6234)
-    ThisCD2 = CD("Dark Side Of The Moon", "Pink Floyd", 1023)
+    ThisBook2.SetIsRequested(613)
     ThisBook2.PrintDetails()
-    ThisCD2.PrintDetails()
     ThisBook3 = Book("Firefly Lane", "Whillih Hannah", 4917)
-    ThisCD3 = CD("Melody of The Night", "Pianoking", 2901)
-    ThisBook3.PrintDetails()
-    ThisCD3.PrintDetails()
-main()
+    ThisBook2.SetIsRequested(292)
+    ThisBook2.PrintDetails()
+    ThisCD1 = CD("And Jutice For All", "Metallica", 2901)
+    ThisCD1.SetGenre('rock and roll')
+    ThisCD1.PrintDetails()
+    ThisCD2 = CD("Melody of The Night", "Pianoking", 2901)
+    ThisCD2.SetGenre('Light Music')
+    ThisCD2.PrintDetails()
 
+main()
+    
