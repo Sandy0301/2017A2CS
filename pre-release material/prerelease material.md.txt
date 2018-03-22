@@ -26,11 +26,7 @@ While
 
 ENDWHILE
 1.4
-Replace the box of “assign lead developer” with a boolean expression “salary>=70”
-Add another two branches of “salary>=90” and “assign lead developer”  below the box of “salary >=70”
-With other boxes remain unchanged
-if salary>=70 is false, assign lead developer
-if salary>=70 is true,assign consultant
+see the image in the same folder
 1.5
 While 
 >CALL ReadSalary()
@@ -38,15 +34,20 @@ While
 >>>THEN
 >>>>IF Salary>90
 >>>>>THEN
->>>>>>Role-Project Manager
+>>>>>>Role<-Project Manager
               
 >>>>>Else
 >>>>>>IF Salary>=70
 >>>>>>>THEN 
->>>>>>>>Role-Consultant
+>>>>>>>>Role<-Consultant
+
 >>>>>>>ELSE
->>>>>>>>Role-lead developer
-       
+>>>>>>>>Role<-lead developer
+
+>>>>>>ENDIF    
+
+>>>>>ENDIF   
+
 >>>ENDIF
 
 >>ELSE
@@ -55,6 +56,7 @@ While
 >ENDIF
 
 ENDWHILE
+
 1.6
 def Role(s):
 >if s<50:
@@ -71,7 +73,7 @@ ComputerGame-category,console
 Vehicle-type,height,length,weight
 2.2
 attributes of the base class are copied to the subclasses
-Arrows from computerGame and Vehicle pointing to Toy
+see the diagram attached in the same folder
 2.3
 class Toy:>def __init__(self, Name, ID,  Price, Minimumage):>>self.__Name= Nameself.__ID= IDself.__Price= Priceself.__Minimumage= Minimumage>def Constructor(self):>>self.Name=""self.ID=0self.Price=-1self.__Minimumage=-1    
 >def SetName(self,N):>>self.Name=N>def SetID(self,N):>>self.ID=N    
