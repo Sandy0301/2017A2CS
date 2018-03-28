@@ -1,4 +1,4 @@
-capitalCity(paris).
-capitalCity(beijing).
-capitalCity(ottawa).
-capitalCity(washington).
+capital(paris).
+capital(beijing).
+capital(ottawa).
+capital(washington).
